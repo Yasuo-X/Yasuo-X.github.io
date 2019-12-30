@@ -64,6 +64,182 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/30/first/" class="article-date">
+  <time datetime="2019-12-30T06:05:39.835Z" itemprop="datePublished">2019-12-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/30/first/">first</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="算法小记"><a href="#算法小记" class="headerlink" title="算法小记"></a>算法小记</h1><h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="链表反转"><a href="#链表反转" class="headerlink" title="链表反转"></a>链表反转</h3><p>思考如何编写链表反转！</p>
+<p>1，首先若直接链表反转，会记不住next结点，导致断链，所以必须开始之前记录下next结点</p>
+<p>2，初始化前置结点pre为null，将头结点指向前置结点pre</p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//链表反转</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">reverse</span><span class="params">(Node head)</span></span>&#123;</span><br><span class="line">        <span class="comment">//前置结点为null</span></span><br><span class="line">        Node pre=<span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//当前结点为curr</span></span><br><span class="line">        Node curr=head;</span><br><span class="line">        <span class="keyword">while</span> (curr !=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="comment">//记住后置结点</span></span><br><span class="line">            Node next=curr.next;</span><br><span class="line">            <span class="comment">//当前结点next指向前置结点</span></span><br><span class="line">            curr.next=pre;</span><br><span class="line">            <span class="comment">//前置结点前移一位</span></span><br><span class="line">            pre=curr;</span><br><span class="line">            <span class="comment">//当前结点前移一位</span></span><br><span class="line">            curr=next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//返回前置结点</span></span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="链表成对反转"><a href="#链表成对反转" class="headerlink" title="链表成对反转"></a>链表成对反转</h3><p>思考：</p>
+<p>1，记录两个指针，第一个第二个</p>
+<p>2，若末尾只剩一个，则停止，及当前结点的next.next为空</p>
+<p>3，跟单链表反转一致，记住后置结点，前置节点</p>
+<h3 id="链表成环判断"><a href="#链表成环判断" class="headerlink" title="链表成环判断"></a>链表成环判断</h3><ol>
+<li>快慢指针</li>
+<li>set集合</li>
+</ol>
+<h3 id="链表合并相加"><a href="#链表合并相加" class="headerlink" title="链表合并相加"></a>链表合并相加</h3><ol>
+<li>相加大于10，保存变量到进位</li>
+</ol>
+<h2 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h2><h3 id="滑动窗口输出最大值"><a href="#滑动窗口输出最大值" class="headerlink" title="滑动窗口输出最大值"></a>滑动窗口输出最大值</h3><ol>
+<li>小顶堆</li>
+<li>双端队列</li>
+</ol>
+<h3 id="序列中第K大元素"><a href="#序列中第K大元素" class="headerlink" title="序列中第K大元素"></a>序列中第K大元素</h3><ol>
+<li>小顶堆</li>
+</ol>
+<h2 id="堆栈和队列"><a href="#堆栈和队列" class="headerlink" title="堆栈和队列"></a>堆栈和队列</h2><h3 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h3><p>使用两个栈，将A栈全部取出，放入到B，每次从b取，b取完之后将A中元素又全部放入</p>
+<h3 id="字符串格式校验"><a href="#字符串格式校验" class="headerlink" title="字符串格式校验 ([{}])"></a>字符串格式校验 ([{}])</h3><ol>
+<li>replace</li>
+<li>栈</li>
+</ol>
+<h2 id="映射和集合-map和set"><a href="#映射和集合-map和set" class="headerlink" title="映射和集合 map和set"></a>映射和集合 map和set</h2><h3 id="异位词"><a href="#异位词" class="headerlink" title="异位词"></a>异位词</h3><ol>
+<li>排序对比</li>
+<li>map计数</li>
+</ol>
+<h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h3><ol>
+<li>map</li>
+<li>双重for循环</li>
+</ol>
+<h3 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h3><ol>
+<li>map双重for循环+set</li>
+<li>三重for循环</li>
+<li>for循环，两端向内移动相加 大于和左端往右，小于右端往左</li>
+</ol>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="验证是否是二叉树"><a href="#验证是否是二叉树" class="headerlink" title="验证是否是二叉树"></a>验证是否是二叉树</h3><ol>
+<li>中序遍历</li>
+<li>递归判断</li>
+</ol>
+<h3 id="最近公共祖先"><a href="#最近公共祖先" class="headerlink" title="最近公共祖先"></a>最近公共祖先</h3><ol>
+<li>path，遍历q和p的路径</li>
+<li>递归法</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/30/first/" data-id="ck4s1hm5d0000d2rh2k5jbkqf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-算法笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2019-12-30T06:04:16.640Z" itemprop="datePublished">2019-12-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">算法笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="算法小记"><a href="#算法小记" class="headerlink" title="算法小记"></a>算法小记</h1><h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="链表反转"><a href="#链表反转" class="headerlink" title="链表反转"></a>链表反转</h3><p>思考如何编写链表反转！</p>
+<p>1，首先若直接链表反转，会记不住next结点，导致断链，所以必须开始之前记录下next结点</p>
+<p>2，初始化前置结点pre为null，将头结点指向前置结点pre</p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//链表反转</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">reverse</span><span class="params">(Node head)</span></span>&#123;</span><br><span class="line">        <span class="comment">//前置结点为null</span></span><br><span class="line">        Node pre=<span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//当前结点为curr</span></span><br><span class="line">        Node curr=head;</span><br><span class="line">        <span class="keyword">while</span> (curr !=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="comment">//记住后置结点</span></span><br><span class="line">            Node next=curr.next;</span><br><span class="line">            <span class="comment">//当前结点next指向前置结点</span></span><br><span class="line">            curr.next=pre;</span><br><span class="line">            <span class="comment">//前置结点前移一位</span></span><br><span class="line">            pre=curr;</span><br><span class="line">            <span class="comment">//当前结点前移一位</span></span><br><span class="line">            curr=next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//返回前置结点</span></span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="链表成对反转"><a href="#链表成对反转" class="headerlink" title="链表成对反转"></a>链表成对反转</h3><p>思考：</p>
+<p>1，记录两个指针，第一个第二个</p>
+<p>2，若末尾只剩一个，则停止，及当前结点的next.next为空</p>
+<p>3，跟单链表反转一致，记住后置结点，前置节点</p>
+<h3 id="链表成环判断"><a href="#链表成环判断" class="headerlink" title="链表成环判断"></a>链表成环判断</h3><ol>
+<li>快慢指针</li>
+<li>set集合</li>
+</ol>
+<h3 id="链表合并相加"><a href="#链表合并相加" class="headerlink" title="链表合并相加"></a>链表合并相加</h3><ol>
+<li>相加大于10，保存变量到进位</li>
+</ol>
+<h2 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h2><h3 id="滑动窗口输出最大值"><a href="#滑动窗口输出最大值" class="headerlink" title="滑动窗口输出最大值"></a>滑动窗口输出最大值</h3><ol>
+<li>小顶堆</li>
+<li>双端队列</li>
+</ol>
+<h3 id="序列中第K大元素"><a href="#序列中第K大元素" class="headerlink" title="序列中第K大元素"></a>序列中第K大元素</h3><ol>
+<li>小顶堆</li>
+</ol>
+<h2 id="堆栈和队列"><a href="#堆栈和队列" class="headerlink" title="堆栈和队列"></a>堆栈和队列</h2><h3 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h3><p>使用两个栈，将A栈全部取出，放入到B，每次从b取，b取完之后将A中元素又全部放入</p>
+<h3 id="字符串格式校验"><a href="#字符串格式校验" class="headerlink" title="字符串格式校验 ([{}])"></a>字符串格式校验 ([{}])</h3><ol>
+<li>replace</li>
+<li>栈</li>
+</ol>
+<h2 id="映射和集合-map和set"><a href="#映射和集合-map和set" class="headerlink" title="映射和集合 map和set"></a>映射和集合 map和set</h2><h3 id="异位词"><a href="#异位词" class="headerlink" title="异位词"></a>异位词</h3><ol>
+<li>排序对比</li>
+<li>map计数</li>
+</ol>
+<h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h3><ol>
+<li>map</li>
+<li>双重for循环</li>
+</ol>
+<h3 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h3><ol>
+<li>map双重for循环+set</li>
+<li>三重for循环</li>
+<li>for循环，两端向内移动相加 大于和左端往右，小于右端往左</li>
+</ol>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="验证是否是二叉树"><a href="#验证是否是二叉树" class="headerlink" title="验证是否是二叉树"></a>验证是否是二叉树</h3><ol>
+<li>中序遍历</li>
+<li>递归判断</li>
+</ol>
+<h3 id="最近公共祖先"><a href="#最近公共祖先" class="headerlink" title="最近公共祖先"></a>最近公共祖先</h3><ol>
+<li>path，遍历q和p的路径</li>
+<li>递归法</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" data-id="ck4s1hm5p0002d2rh9sj53bi5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/30/hello-world/" class="article-date">
@@ -103,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/30/hello-world/" data-id="ck4s0k4sj00007xrh8zz08y3m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/30/hello-world/" data-id="ck4s1hm5m0001d2rh0w66h6l5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,6 +318,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/12/30/first/">first</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">算法笔记</a>
+          </li>
         
           <li>
             <a href="/2019/12/30/hello-world/">Hello World</a>
